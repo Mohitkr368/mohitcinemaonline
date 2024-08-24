@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Movie Streaming</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            padding: 10px 0;
+        }
+        .nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        .hero {
+            position: relative;
+            background-image: url('https://via.placeholder.com/1920x600');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h2 {
+            font-size: 3em;
+            margin: 0;
+        }
+        .search-bar {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .search-bar input {
+            width: 60%;
+            padding: 10px;
+            font-size: 1em;
+        }
+        .main-content {
+            width: 80%;
+            margin: 20px auto;
+        }
+        .movie-carousel {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .movie-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            width: 200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .movie-item img {
+            width: 100%;
+            height: auto;
+        }
+        .movie-item h3 {
+            margin: 10px;
+            font-size: 1.1em;
+        }
+        .movie-item p {
+            margin: 0 10px 10px;
+            color: #666;
+        }
+        .movie-item button {
+            display: block;
+            width: 80%;
+            margin: 0 auto 10px;
+            padding: 10px;
+            border: none;
+            background-color: #e60023;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .movie-item button:hover {
+            background-color: #cc0000;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+        .video-container {
+            margin: 20px auto;
+            text-align: center;
+        }
+        .video-container video {
+            width: 80%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Online Movie Streaming</h1>
+    </header>
+
+    <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Genres</a>
+        <a href="#">New Releases</a>
+        <a href="#">Trending Movies</a>
+        <a href="#">Account</a>
+    </nav>
+
+    <div class="hero">
+        <h2>Watch Your Favorite Movies by ANIL</h2>
+    </div>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search for movies...">
+    </div>
+
+    <div class="main-content">
+        <h2>Featured Movies</h2>
+        <div class="movie-carousel">
+            <div class="movie-item">
+                <img src="hindi.jpeg" alt="Movie 1">
+                <h3>Movie Title 1</h3>
+                <p>A brief description of Movie 1.</p>
+                <button onclick="playVideo('aranmanai4.mkv')">Watch Now aranmanai_4</button>
+<button onclick="playVideo('crew.mkv')">Watch Now crew</button>
+            </div>
+            <div class="movie-item">
+                <img src="hollywood.jpg" alt="Movie 2">
+                <h3>Movie Title 2</h3>
+                <p>A brief description of Movie 2.</p>
+                <button onclick="playVideo('movie2.mp4')">Watch Now</button>
+            </div>
+            <div class="movie-item">
+                <img src="anime.jpeg" alt="Movie 3">
+                <h3>Movie Title 3</h3>
+                <p>A brief description of Movie 3.</p>
+                <button onclick="playVideo('movie3.mp4')">Watch Now</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="video-container" id="video-container">
+        <!-- Video player will be dynamically inserted here -->
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Online Movie Streaming by MOHIT. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function playVideo(videoSrc) {
+            const videoContainer = document.getElementById('video-container');
+            videoContainer.innerHTML = `
+                <video controls>
+                    <source src="${videoSrc}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            `;
+        }
+    </script>
+</body>
+</html>
